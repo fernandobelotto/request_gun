@@ -1,15 +1,18 @@
+const express = require('express')
 
-import express from "express";
-import bodyParser from "body-parser";
-import cors from "cors";
+const cors = require('cors')
 
-const app = express();
-app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+const api = express()
 
-app.get("/test", (req, res) => setTimeout(res.send({ ok: true }), 300))
 
-app.listen(8083, () => {
-    console.log('listing in localhost:8083')
+api.use(cors())
+api.post("/tests", (req, res) => {
+    console.log("Chamou!!")
+    setTimeout(() => {
+        console.log("Respondeu")
+        return res.json({ ok: true })
+    }, 100)
+
 })
+
+api.listen(8083)

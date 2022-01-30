@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-async function requestGun({ method, path, host, req_quantity, body, measureName }) {
+async function requestGun({ method, path, host, req_quantity, body, measureName }: any) {
     let arrayForLoop = Array(req_quantity).entries()
     performance.mark('start');
     for (let [i, v] of arrayForLoop) {
@@ -16,7 +16,7 @@ async function requestGun({ method, path, host, req_quantity, body, measureName 
 }
 
 requestGun({
-    measureName: 'IMPERATIVE post users 1000req',
+    measureName: 'REACTIVE post users 1000req',
     req_quantity: 1000,
     method: 'POST',
     path: '/users',
@@ -24,14 +24,14 @@ requestGun({
     body: { name: 'fernando', document: '123456', email: 'fernando@email.com' },
 })
 
-requestGun({
-    measureName: 'IMPERATIVE get users 1000req',
-    req_quantity: 1000,
-    method: 'GET',
-    path: '/users',
-    host: 'http://localhost:8082',
-    body: {}
-})
+// requestGun({
+//     measureName: 'IMPERATIVE get users 1000req',
+//     req_quantity: 1000,
+//     method: 'GET',
+//     path: '/users',
+//     host: 'http://localhost:8082',
+//     body: {}
+// })
 
 // requestGun({
 //     measureName: 'REACTIVE post users 1000req'
