@@ -1,0 +1,16 @@
+IMPERATIVE post users 1000req
+PerformanceMeasure {
+  name: 'start to finish',
+  entryType: 'measure',
+  startTime: 146.03483510017395,
+  duration: 6569.992795944214,
+  detail: undefined
+}
+IMPERATIVE get users 1000req
+PerformanceMeasure {
+  name: 'start to finish',
+  entryType: 'measure',
+  startTime: 146.03483510017395,
+  duration: 10350.10091495514,
+  detail: undefined
+}
